@@ -4,20 +4,22 @@ import {
   getFilterPlatformGame,
   getListGames,
 } from "./controller/games-controller";
+import { HttpMethod } from "./utils/http-methods";
+import { Routes } from "./routes/routes";
 
 const server = http.createServer(
   async (request: http.IncomingMessage, response: http.ServerResponse) => {
     const baseUrl = request.url?.split("?")[0];
 
-    if (request.method === "GET" && baseUrl === "/api/games") {
+    if (request.method === HttpMethod.GET && baseUrl === Routes.GAMES) {
       await getListGames(request, response);
     }
 
-    if (request.method === "GET" && baseUrl === "/api/name") {
+    if (request.method === HttpMethod.GET && baseUrl === Routes.NAMEGAME) {
       await getFilterNameGame(request, response);
     }
 
-    if (request.method === "GET" && baseUrl === "/api/platform") {
+    if (request.method === HttpMethod.GET && baseUrl === Routes.NAMEPLATFORM) {
       await getFilterPlatformGame(request, response);
     }
   }

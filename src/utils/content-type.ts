@@ -1,0 +1,16 @@
+export enum ContentType {
+  JSON = "application/json",
+  HTML = "text/html",
+  XML = "application/xml",
+  TEXT = "text/plain",
+  PDF = "application/pdf",
+  CSV = "text/csv",
+  JPEG = "image/jpeg",
+  PNG = "image/png",
+  GIF = "image/gif",
+  SVG = "image/svg+xml",
+  MP4 = "video/mp4",
+  MP3 = "audio/mpeg",
+  JAVASCRIPT = "application/javascript",
+  CSS = "text/css",
+}
