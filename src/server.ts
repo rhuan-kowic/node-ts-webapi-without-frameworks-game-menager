@@ -1,9 +1,13 @@
 import * as http from "http";
-import { getFilterNameGame, getListGames } from "./controller/games-controller";
+import {
+  getFilterNameGame,
+  getFilterPlatformGame,
+  getListGames,
+} from "./controller/games-controller";
 
 const server = http.createServer(
   async (request: http.IncomingMessage, response: http.ServerResponse) => {
-    const baseUrl= request.url?.split("?")[0];
+    const baseUrl = request.url?.split("?")[0];
 
     if (request.method === "GET" && baseUrl === "/api/games") {
       await getListGames(request, response);
@@ -11,6 +15,10 @@ const server = http.createServer(
 
     if (request.method === "GET" && baseUrl === "/api/name") {
       await getFilterNameGame(request, response);
+    }
+
+    if (request.method === "GET" && baseUrl === "/api/platform") {
+      await getFilterPlatformGame(request, response);
     }
   }
 );

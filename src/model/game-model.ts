@@ -1,6 +1,6 @@
 export interface GameModel {
   nameGame: string;
   yearRelease: number;
-  platform: string[];
+  platforms: string[];
   categories: string[];
 }

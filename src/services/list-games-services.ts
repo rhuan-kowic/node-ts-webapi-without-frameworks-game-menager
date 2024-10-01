@@ -5,6 +5,7 @@ export const listGamesServices = async (): Promise<GameModel[]> => {
   try {
     const data = await repositoryGame();
     return data;
+    
   } catch (error) {
     throw error;
   }
