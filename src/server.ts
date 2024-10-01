@@ -1,10 +1,16 @@
 import * as http from "http";
-import { listGames } from "./controller/games-controller";
+import { getFilterNameGame, getListGames } from "./controller/games-controller";
 
 const server = http.createServer(
   async (request: http.IncomingMessage, response: http.ServerResponse) => {
-    if(request.method === "GET"){
-      await listGames(request, response);
+    const baseUrl= request.url?.split("?")[0];
+
+    if (request.method === "GET" && baseUrl === "/api/games") {
+      await getListGames(request, response);
+    }
+
+    if (request.method === "GET" && baseUrl === "/api/name") {
+      await getFilterNameGame(request, response);
     }
   }
 );
