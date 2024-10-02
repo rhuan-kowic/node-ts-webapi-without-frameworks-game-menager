@@ -1,5 +1,6 @@
 import * as http from "http";
 import {
+  deleteGame,
   getFilterNameGame,
   getFilterPlatformGame,
   getListGames,
@@ -21,6 +22,10 @@ const server = http.createServer(
 
     if (request.method === HttpMethod.GET && baseUrl === Routes.NAMEPLATFORM) {
       await getFilterPlatformGame(request, response);
+    }
+
+    if (request.method === HttpMethod.DELETE && baseUrl && Routes.REMOVE){
+      await deleteGame(request, response);
     }
   }
 );

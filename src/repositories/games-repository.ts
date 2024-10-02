@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
+
 import { GameModel } from "../model/game-model";
+
 const pathData = path.join(__dirname, "./data-games.json");
 const language = "utf-8";
 
@@ -39,6 +41,24 @@ export const gamesByPlatform = async (
     return platformGames;
   } catch (error) {
     console.error("Error reading or parsing file:", error);
+    throw error;
+  }
+};
+
+export const deleteGameByName = async (name: string): Promise<Boolean> => {
+  try {
+    const rawData = fs.readFileSync(pathData, language);
+    const jsonFile = JSON.parse(rawData);
+    const updatedJsonFile = jsonFile.filter(
+      (game: GameModel) => game.nameGame !== name
+    );
+    let isContent: boolean =
+      jsonFile.length === updatedJsonFile.length ? false : true;
+
+    fs.writeFileSync(pathData, JSON.stringify(updatedJsonFile, null, 2));
+    return isContent;
+  } catch (error) {
+    console.error("Error reading or parsing file: ", error);
     throw error;
   }
 };
