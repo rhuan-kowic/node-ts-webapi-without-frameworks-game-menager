@@ -62,3 +62,19 @@ export const deleteGameByName = async (name: string): Promise<Boolean> => {
     throw error;
   }
 };
+
+export const addGame = async (game: GameModel) => {
+  try {
+    const rawData = fs.readFileSync(pathData, language);
+    const jsonFile = JSON.parse(rawData);
+    const length = jsonFile.length;
+    jsonFile.push(game);
+    const isAdd: boolean = length !== jsonFile.length ? true : false;
+
+    fs.writeFileSync(pathData, JSON.stringify(jsonFile, null, 2));
+    return isAdd;
+  } catch (error) {
+    console.error("Error reading or parsing file: ", error);
+    throw error;
+  }
+};

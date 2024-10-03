@@ -2,86 +2,171 @@
   {
     "nameGame": "Pokemon FireRed",
     "yearRelease": 2004,
-    "platforms": ["Game Boy Advance"],
-    "categories": ["RPG"]
+    "platforms": [
+      "Game Boy Advance"
+    ],
+    "categories": [
+      "RPG"
+    ]
   },
   {
     "nameGame": "League of Legends",
     "yearRelease": 2009,
-    "platforms": ["Windows", "MacOS"],
-    "categories": ["MOBA"]
+    "platforms": [
+      "Windows",
+      "MacOS"
+    ],
+    "categories": [
+      "MOBA"
+    ]
   },
   {
     "nameGame": "The Legend of Zelda: Breath of the Wild",
     "yearRelease": 2017,
-    "platforms": ["Nintendo Switch", "Wii U"],
-    "categories": ["Action-adventure"]
+    "platforms": [
+      "Nintendo Switch",
+      "Wii U"
+    ],
+    "categories": [
+      "Action-adventure"
+    ]
   },
   {
     "nameGame": "Minecraft",
     "yearRelease": 2011,
-    "platforms": ["Windows", "MacOS", "Linux", "Consoles", "Mobile"],
-    "categories": ["Sandbox", "Survival"]
+    "platforms": [
+      "Windows",
+      "MacOS",
+      "Linux",
+      "Consoles",
+      "Mobile"
+    ],
+    "categories": [
+      "Sandbox",
+      "Survival"
+    ]
   },
   {
     "nameGame": "The Witcher 3: Wild Hunt",
     "yearRelease": 2015,
-    "platforms": ["Windows", "PlayStation 4", "Xbox One", "Nintendo Switch"],
-    "categories": ["RPG"]
+    "platforms": [
+      "Windows",
+      "PlayStation 4",
+      "Xbox One",
+      "Nintendo Switch"
+    ],
+    "categories": [
+      "RPG"
+    ]
   },
   {
     "nameGame": "Fortnite",
     "yearRelease": 2017,
-    "platforms": ["Windows", "MacOS", "Consoles", "Mobile"],
-    "categories": ["Battle Royale", "Sandbox"]
+    "platforms": [
+      "Windows",
+      "MacOS",
+      "Consoles",
+      "Mobile"
+    ],
+    "categories": [
+      "Battle Royale",
+      "Sandbox"
+    ]
   },
   {
     "nameGame": "Overwatch",
     "yearRelease": 2016,
-    "platforms": ["Windows", "PlayStation 4", "Xbox One", "Nintendo Switch"],
-    "categories": ["FPS"]
+    "platforms": [
+      "Windows",
+      "PlayStation 4",
+      "Xbox One",
+      "Nintendo Switch"
+    ],
+    "categories": [
+      "FPS"
+    ]
   },
   {
     "nameGame": "Red Dead Redemption 2",
     "yearRelease": 2018,
-    "platforms": ["Windows", "PlayStation 4", "Xbox One"],
-    "categories": ["Action-adventure"]
+    "platforms": [
+      "Windows",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "categories": [
+      "Action-adventure"
+    ]
   },
   {
     "nameGame": "Among Us",
     "yearRelease": 2018,
-    "platforms": ["Windows", "Mobile", "Nintendo Switch"],
-    "categories": ["Party", "Social Deduction"]
+    "platforms": [
+      "Windows",
+      "Mobile",
+      "Nintendo Switch"
+    ],
+    "categories": [
+      "Party",
+      "Social Deduction"
+    ]
   },
   {
     "nameGame": "Animal Crossing: New Horizons",
     "yearRelease": 2020,
-    "platforms": ["Nintendo Switch"],
-    "categories": ["Simulation"]
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "categories": [
+      "Simulation"
+    ]
   },
   {
     "nameGame": "Cyberpunk 2077",
     "yearRelease": 2020,
-    "platforms": ["Windows", "PlayStation 4", "Xbox One"],
-    "categories": ["RPG"]
+    "platforms": [
+      "Windows",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "categories": [
+      "RPG"
+    ]
   },
   {
     "nameGame": "Hades",
     "yearRelease": 2020,
-    "platforms": ["Windows", "MacOS", "Nintendo Switch"],
-    "categories": ["Roguelike", "Action"]
+    "platforms": [
+      "Windows",
+      "MacOS",
+      "Nintendo Switch"
+    ],
+    "categories": [
+      "Roguelike",
+      "Action"
+    ]
   },
   {
     "nameGame": "Genshin Impact",
     "yearRelease": 2020,
-    "platforms": ["Windows", "PlayStation 4", "Mobile"],
-    "categories": ["Action RPG"]
+    "platforms": [
+      "Windows",
+      "PlayStation 4",
+      "Mobile"
+    ],
+    "categories": [
+      "Action RPG"
+    ]
   },
   {
     "nameGame": "Valorant",
     "yearRelease": 2020,
-    "platforms": ["Windows"],
-    "categories": ["FPS"]
+    "platforms": [
+      "Windows"
+    ],
+    "categories": [
+      "FPS"
+    ]
   },
   {
     "nameGame": "Hollow Knight",
@@ -94,7 +179,9 @@
       "PlayStation 4",
       "Xbox One"
     ],
-    "categories": ["Metroidvania"]
+    "categories": [
+      "Metroidvania"
+    ]
   },
   {
     "nameGame": "Celeste",
@@ -107,30 +194,68 @@
       "PlayStation 4",
       "Xbox One"
     ],
-    "categories": ["Platformer"]
+    "categories": [
+      "Platformer"
+    ]
   },
   {
     "nameGame": "Dark Souls III",
     "yearRelease": 2016,
-    "platforms": ["Windows", "PlayStation 4", "Xbox One"],
-    "categories": ["Action RPG"]
+    "platforms": [
+      "Windows",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "categories": [
+      "Action RPG"
+    ]
   },
   {
     "nameGame": "Stardew Valley",
     "yearRelease": 2016,
-    "platforms": ["Windows", "MacOS", "Linux", "Consoles", "Mobile"],
-    "categories": ["Simulation", "RPG"]
+    "platforms": [
+      "Windows",
+      "MacOS",
+      "Linux",
+      "Consoles",
+      "Mobile"
+    ],
+    "categories": [
+      "Simulation",
+      "RPG"
+    ]
   },
   {
     "nameGame": "DOOM Eternal",
     "yearRelease": 2020,
-    "platforms": ["Windows", "PlayStation 4", "Xbox One", "Nintendo Switch"],
-    "categories": ["FPS"]
+    "platforms": [
+      "Windows",
+      "PlayStation 4",
+      "Xbox One",
+      "Nintendo Switch"
+    ],
+    "categories": [
+      "FPS"
+    ]
   },
   {
     "nameGame": "Ghost of Tsushima",
     "yearRelease": 2020,
-    "platforms": ["PlayStation 4"],
-    "categories": ["Action-adventure"]
+    "platforms": [
+      "PlayStation 4"
+    ],
+    "categories": [
+      "Action-adventure"
+    ]
+  },
+  {
+    "nameGame": "Pokemon LeafGreen",
+    "yearRelease": 2004,
+    "platforms": [
+      "Game Boy Advance"
+    ],
+    "categories": [
+      "RPG"
+    ]
   }
 ]
