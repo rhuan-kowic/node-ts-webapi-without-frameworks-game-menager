@@ -1,13 +1,12 @@
 import { GameModel } from "../model/game-model";
-import { repositoryGame } from "../repositories/games-repository";
+import { listGamesRepository } from "../repositories/games-repository";
 
 export const nameGameServices = async (
   gameName: string
 ): Promise<GameModel[]> => {
   try {
-    const data = await repositoryGame(gameName);
+    const data = await listGamesRepository(gameName);
     return data;
-    
   } catch (error) {
     throw error;
   }

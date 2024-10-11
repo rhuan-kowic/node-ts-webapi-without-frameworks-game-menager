@@ -6,7 +6,7 @@ import { GameModel } from "../model/game-model";
 const pathData = path.join(__dirname, "./data-games.json");
 const language = "utf-8";
 
-export const repositoryGame = async (
+export const listGamesRepository = async (
   gameName?: string
 ): Promise<GameModel[]> => {
   try {
@@ -26,7 +26,7 @@ export const repositoryGame = async (
   }
 };
 
-export const gamesByPlatform = async (
+export const gamesByPlatformRepository = async (
   platform: string
 ): Promise<GameModel[]> => {
   try {
@@ -45,7 +45,9 @@ export const gamesByPlatform = async (
   }
 };
 
-export const deleteGameByName = async (name: string): Promise<Boolean> => {
+export const deleteGameByNameRepository = async (
+  name: string
+): Promise<Boolean> => {
   try {
     const rawData = fs.readFileSync(pathData, language);
     const jsonFile = JSON.parse(rawData);
@@ -63,7 +65,7 @@ export const deleteGameByName = async (name: string): Promise<Boolean> => {
   }
 };
 
-export const addGame = async (game: GameModel) => {
+export const addGameRepository = async (game: GameModel) => {
   try {
     const rawData = fs.readFileSync(pathData, language);
     const jsonFile = JSON.parse(rawData);

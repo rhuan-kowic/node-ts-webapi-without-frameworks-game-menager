@@ -1,10 +1,10 @@
 import * as http from "http";
 import {
   addGameController,
-  deleteGame,
-  getFilterNameGame,
-  getFilterPlatformGame,
-  getListGames,
+  deleteGameController,
+  filterNameGameController,
+  filterPlatformGameController,
+  listGamesController,
 } from "./controller/games-controller";
 import { HttpMethod } from "./utils/http-methods";
 import { Routes } from "./routes/routes";
@@ -14,19 +14,19 @@ const server = http.createServer(
     const baseUrl = request.url?.split("?")[0];
 
     if (request.method === HttpMethod.GET && baseUrl === Routes.GAMES) {
-      await getListGames(request, response);
+      await listGamesController(request, response);
     }
 
     if (request.method === HttpMethod.GET && baseUrl === Routes.NAMEGAME) {
-      await getFilterNameGame(request, response);
+      await filterNameGameController(request, response);
     }
 
     if (request.method === HttpMethod.GET && baseUrl === Routes.NAMEPLATFORM) {
-      await getFilterPlatformGame(request, response);
+      await filterPlatformGameController(request, response);
     }
 
     if (request.method === HttpMethod.DELETE && baseUrl && Routes.REMOVE) {
-      await deleteGame(request, response);
+      await deleteGameController(request, response);
     }
 
     if (request.method === HttpMethod.POST && baseUrl === Routes.ADDGAME) {

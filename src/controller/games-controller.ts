@@ -8,27 +8,27 @@ import { deleteGameServices } from "../services/remove-game-services";
 import { ContentType } from "../utils/content-type";
 import { addGameServices } from "../services/add-game-services";
 
-export const getListGames = async (
+export const listGamesController = async (
   request: IncomingMessage,
   response: ServerResponse
 ) => {
   try {
     const content = await listGamesServices();
 
-    response.writeHead(StatusCode.OK, { "Content-type": "application/json" });
+    response.writeHead(StatusCode.OK, { "Content-type": ContentType.JSON });
     response.write(JSON.stringify(content));
     response.end();
   } catch (error) {
-    console.error("Error in listGamesServices:", error);
+    console.error("Error in listGamesController:", error);
     response.writeHead(StatusCode.INTERNAL_SERVER_ERROR, {
-      "Content-type": "application/json",
+      "Content-type": ContentType.JSON,
     });
     response.write(JSON.stringify({ error: "Internal Server Error" }));
     response.end();
   }
 };
 
-export const getFilterNameGame = async (
+export const filterNameGameController = async (
   request: IncomingMessage,
   response: ServerResponse
 ) => {
@@ -36,21 +36,21 @@ export const getFilterNameGame = async (
     const queryString = request.url?.split("?name=")[1] ?? "";
     const content = await nameGameServices(queryString);
 
-    response.writeHead(StatusCode.OK, { "Content-type": "application/json" });
+    response.writeHead(StatusCode.OK, { "Content-type": ContentType.JSON });
     response.write(JSON.stringify(content));
     response.end();
   } catch (error) {
-    console.error("Error in getFilterNameGame:", error);
+    console.error("Error in filterNameGameController:", error);
 
     response.writeHead(StatusCode.INTERNAL_SERVER_ERROR, {
-      "Content-type": "application/json",
+      "Content-type": ContentType.JSON,
     });
     response.write(JSON.stringify({ error: "Internal Server Error" }));
     response.end();
   }
 };
 
-export const getFilterPlatformGame = async (
+export const filterPlatformGameController = async (
   request: IncomingMessage,
   response: ServerResponse
 ) => {
@@ -58,21 +58,21 @@ export const getFilterPlatformGame = async (
     const stringQuery = request.url?.split("?platform=")[1] ?? "";
     const content = await platformGamesServices(stringQuery);
 
-    response.writeHead(StatusCode.OK, { "Content-type": "application/json" });
+    response.writeHead(StatusCode.OK, { "Content-type": ContentType.JSON });
     response.write(JSON.stringify(content));
     response.end();
   } catch (error) {
-    console.error("Error in getFilterNameGame:", error);
+    console.error("Error in filterPlatformGameController:", error);
 
     response.writeHead(StatusCode.INTERNAL_SERVER_ERROR, {
-      "Content-type": "application/json",
+      "Content-type": ContentType.JSON,
     });
     response.write(JSON.stringify({ error: "Internal Server Error" }));
     response.end();
   }
 };
 
-export const deleteGame = async (
+export const deleteGameController = async (
   request: IncomingMessage,
   response: ServerResponse
 ) => {
@@ -81,7 +81,7 @@ export const deleteGame = async (
     const isDelete = await deleteGameServices(stringQuery);
     if (isDelete) {
       response.writeHead(StatusCode.OK, {
-        "Content-type": "application/json",
+        "Content-type": ContentType.JSON,
       });
       response.write(
         JSON.stringify({
@@ -91,7 +91,7 @@ export const deleteGame = async (
       response.end();
     } else {
       response.writeHead(StatusCode.NO_CONTENT, {
-        "Content-type": "application/json",
+        "Content-type": ContentType.JSON,
       });
       response.write(
         JSON.stringify({
@@ -101,10 +101,10 @@ export const deleteGame = async (
       response.end();
     }
   } catch (error) {
-    console.error("Error in getFilterNameGame:", error);
+    console.error("Error in deleteGameController:", error);
 
     response.writeHead(StatusCode.INTERNAL_SERVER_ERROR, {
-      "Content-type": "application/json",
+      "Content-type": ContentType.JSON,
     });
     response.write(JSON.stringify({ error: "Internal Server Error" }));
     response.end();
@@ -138,7 +138,11 @@ export const addGameController = async (
       }
     });
   } catch (error) {
-    console.error(error);
-    throw error;
+    console.error("Error in deleteGameController:", error);
+    response.writeHead(StatusCode.INTERNAL_SERVER_ERROR, {
+      "Content-type": ContentType.JSON,
+    });
+    response.write(JSON.stringify({ error: "Internal Server Error" }));
+    response.end();
   }
 };
