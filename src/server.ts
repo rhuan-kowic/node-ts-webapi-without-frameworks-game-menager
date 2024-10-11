@@ -1,5 +1,6 @@
 import * as http from "http";
 import {
+  addGameController,
   deleteGame,
   getFilterNameGame,
   getFilterPlatformGame,
@@ -7,7 +8,6 @@ import {
 } from "./controller/games-controller";
 import { HttpMethod } from "./utils/http-methods";
 import { Routes } from "./routes/routes";
-import { addGame } from "./repositories/games-repository";
 
 const server = http.createServer(
   async (request: http.IncomingMessage, response: http.ServerResponse) => {
@@ -29,13 +29,8 @@ const server = http.createServer(
       await deleteGame(request, response);
     }
 
-    if (request.method === HttpMethod.POST) {
-      await addGame({
-        nameGame: "Pokemon LeafGreen",
-        yearRelease: 2004,
-        platforms: ["Game Boy Advance"],
-        categories: ["RPG"],
-      });
+    if (request.method === HttpMethod.POST && baseUrl === Routes.ADDGAME) {
+      await addGameController(request, response);
     }
   }
 );

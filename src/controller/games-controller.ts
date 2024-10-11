@@ -5,6 +5,8 @@ import { listGamesServices } from "../services/list-games-services";
 import { nameGameServices } from "../services/filter-name-game-services";
 import { platformGamesServices } from "../services/filter-platform-game-services";
 import { deleteGameServices } from "../services/remove-game-services";
+import { ContentType } from "../utils/content-type";
+import { addGameServices } from "../services/add-game-services";
 
 export const getListGames = async (
   request: IncomingMessage,
@@ -106,5 +108,37 @@ export const deleteGame = async (
     });
     response.write(JSON.stringify({ error: "Internal Server Error" }));
     response.end();
+  }
+};
+
+export const addGameController = async (
+  request: IncomingMessage,
+  response: ServerResponse
+) => {
+  try {
+    let body = "";
+    request.on("data", (chuck) => {
+      body += chuck.toString();
+    });
+
+    request.on("end", async () => {
+      const gameData = JSON.parse(body);
+      const isAdd = await addGameServices(gameData);
+
+      if (isAdd) {
+        response.writeHead(StatusCode.OK, { "Content-Type": ContentType.JSON });
+        response.end(
+          JSON.stringify({ message: "Game data received", data: gameData })
+        );
+      } else {
+        response.writeHead(StatusCode.BAD_REQUEST, {
+          "Content-Type": ContentType.JSON,
+        });
+        response.end(JSON.stringify({ message: "Failed to add game data" }));
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
 };
